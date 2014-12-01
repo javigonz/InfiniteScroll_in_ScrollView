@@ -1,0 +1,32 @@
+// IPHONE *********************************************************
+".winloadingInfiniteScroll[platform=ios]" : {
+	backgroundColor: Alloy.CFG.BLACK,
+    opacity: 0,
+    width: Ti.UI.FILL,
+    height: 40,
+    top: 0
+  
+}
+
+".activityIndicator[platform=ios]" : {
+	tyle: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
+	color:Alloy.CFG.WHITE,
+	opacity:1
+  
+}
+
+// ANDROID *********************************************************
+".winloadingInfiniteScroll[platform=android]" : {
+	backgroundColor: Alloy.CFG.BLACK,
+    opacity: 0,
+    width: Ti.UI.FILL,
+    height: 50,
+    top:0
+  
+}
+
+".activityIndicator[platform=android]" : {
+	style: Ti.UI.ActivityIndicatorStyle.DARK,
+	opacity:1
+  
+}

@@ -1,0 +1,9 @@
+<Alloy>
+	
+	<View class="winloadingInfiniteScroll"   id="winloadingInfiniteScroll" >
+		
+		 <ActivityIndicator id="activityIndicator" class="activityIndicator" ></ActivityIndicator>
+		
+	</View>
+	
+</Alloy>

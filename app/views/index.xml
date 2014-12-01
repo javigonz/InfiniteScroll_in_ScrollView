@@ -1,0 +1,14 @@
+<Alloy>
+	<Window class="container" id="container">
+		
+		<ScrollView  class="scrollableSlider"  showPagingControl="false" id="scrollableSlider" >
+			
+					<!-- Here we put the content -->
+					
+		</ScrollView>
+		
+		<!-- Loading Infinite Scroll -->
+		<Require id="loading_infiniteScroll" src="loading_infiniteScroll"  />
+		
+	</Window>
+</Alloy>

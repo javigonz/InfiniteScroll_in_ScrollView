@@ -1,0 +1,26 @@
+// ANDROID *********************************************************
+
+
+
+".container[platform=android]": {
+	backgroundColor:Alloy.CFG.WHITE,
+	navBarHidden: "true",
+	tabBarHidden: "true"
+}
+
+
+".scrollableSlider[platform=android]": {  
+	showVerticalScrollIndicator: 'true',
+	scrollType: 'vertical',
+	width: Ti.UI.FILL, 
+	backgroundColor: Alloy.CFG.WHITE,
+	layout: "vertical",
+	separatorColor: Alloy.CFG.BLACK
+	     
+}
+
+".rowItemList[platform=android]": {
+	height: 100,
+	backgroundColor: Alloy.CFG.WHITE
+		
+}
