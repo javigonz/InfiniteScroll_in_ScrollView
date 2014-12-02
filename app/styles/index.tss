@@ -14,8 +14,7 @@
 	scrollType: 'vertical',
 	width: Ti.UI.FILL, 
 	backgroundColor: Alloy.CFG.WHITE,
-	layout: "vertical",
-	separatorColor: Alloy.CFG.BLACK
+	layout: "vertical"
 	     
 }
 
@@ -24,3 +23,22 @@
 	backgroundColor: Alloy.CFG.WHITE
 		
 }
+
+".separator[platform=android]": {
+	height: 1,
+	top: 99,
+	backgroundColor: Alloy.CFG.BLACK
+		
+}
+
+".styleText[platform=android]": {
+	color: Alloy.CFG.BLACK,
+	font: {
+		fontSize: 	15,
+		fontWeight: 'normal'
+	},
+	textAlign: 'center'
+
+}
+
+

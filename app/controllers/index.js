@@ -11,13 +11,7 @@ var totalItems = 0;
 var heightItemView = 0;
 var actualPage = 0;
 
- //Styles
-var rowItemList = $.createStyle({classes: ['rowItemList']});
-
-//Init config
 show();
-
-$.container.open();
 
 
 /* ***********************************************************
@@ -67,17 +61,23 @@ function show(){
 	//Now, we call the fucntion who load the items
 	loadItems();
 	
+	$.container.open();
+	
 }
 
 function loadItems()
 {
+	 //Styles
+	var rowItemList = $.createStyle({classes: ['rowItemList']});
+	var separator = $.createStyle({classes: ['separator']});
+	var styleText = $.createStyle({classes: ['styleText']});
+
 	actualPage ++;
 	 
 	//We already get to finish, no more items to load 
 	if (finalRange > collection_Items.length-1)
 	{
 		 finalRange = collection_Items.length-1;
-		 //$.scrollableSlider.scrollingEnabled = true;
 		 $.scrollableSlider.removeEventListener('scroll',scrollView_EndScroll); 
 	}
 	
@@ -88,11 +88,16 @@ function loadItems()
 		var row1 = Ti.UI.createView({});
 		row1.applyProperties(rowItemList);
 		
+		var separatorView = Ti.UI.createView({});
+		separatorView.applyProperties(separator);
+		
 		var label1 = Ti.UI.createLabel({
 			text: 'View ' + i
 		});
+		label1.applyProperties(styleText);
 		
 		row1.add(label1);
+		row1.add(separatorView);
 		contentView.add(row1); 
 		
 		
@@ -100,7 +105,6 @@ function loadItems()
 	
 	//Active Infinite Scroll
 	Ti.App.fireEvent('closeLoading_infiniteScroll');
-	//$.scrollableSlider.scrollingEnabled = true;
 	$.scrollableSlider.addEventListener('scroll',scrollView_EndScroll);
 }	
 
@@ -111,25 +115,7 @@ function scrollView_EndScroll(e)
 {
     if (Ti.Platform.osname === 'iphone')
     {
-        var offset = e.contentOffset.y;
-        var height = e.size.height;
-        var total = offset + height;
-        var theEnd = e.contentSize.height;
-        var distance = theEnd - total;
-		var lastDistance = 0;
-
-        if (distance < lastDistance)
-        {
-            // adjust the % of rows scrolled before we decide to start fetching
-            var nearEnd = theEnd * .85;
- 
-            if ((updating === 'true') && (total >= nearEnd))
-            {
-            	updating = 'false';
-                beginUpdate();
-            }
-        }
-        lastDistance = distance;
+       //Future implementation
     }
     else if (Ti.Platform.osname === 'android')
     {
@@ -139,7 +125,6 @@ function scrollView_EndScroll(e)
        
        if ((updating === 'true') && ((firstVisibleItemIndex + visibleItemCount) >= (totalItems*0.95)))
         {
-        	//$.scrollableSlider.scrollingEnabled = false;
         	$.scrollableSlider.removeEventListener('scroll',scrollView_EndScroll);
         	updating = 'false';
             beginUpdate();
@@ -172,7 +157,6 @@ function beginUpdate()
 	        initRange = finalRange+1;
 	        finalRange += Alloy.CFG.HowManyItemsShow;
 	        updating = 'true';
-	        
 	        loadItems();
 	    }, 2000);
   

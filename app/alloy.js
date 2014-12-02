@@ -1,7 +1,7 @@
 /* *****************************************************************************************
  * Javier González Páez (www.termicadesign.com) 
  * 
- * Infinite Scroll in a single ScrollView with children´s views
+ * Infinite Scroll in a single ScrollView with children views
  * ****************************************************************************************/
 
 
@@ -9,7 +9,7 @@
 Alloy.CFG.HowManyItemsShow = 20;
 
 //Data models of items
-collection_Items = ['view','view','view','view','view','view','view','view','view','view'
+var collection_Items = ['view','view','view','view','view','view','view','view','view','view'
 					,'view','view','view','view','view','view','view','view','view','view'
 					,'view','view','view','view','view','view','view','view','view','view'
 					,'view','view','view','view','view','view','view','view','view','view'
@@ -19,5 +19,5 @@ collection_Items = ['view','view','view','view','view','view','view','view','vie
 
 //Colors
 Alloy.CFG.WHITE 	 		= "#FFFFFF";
-Alloy.CFG.BALCK 	 		= "#000000";
+Alloy.CFG.BLACK 	 		= "#000000";
 
