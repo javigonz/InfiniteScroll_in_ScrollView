@@ -9,9 +9,9 @@ This is a init project to show a information in a scrollView with pagination, bu
 //How many items show in each pagination
 Alloy.CFG.HowManyItemsShow = 20;
 ```
-- In each iteration with sections, the loading page is change to visible and creates a smoth animations.
+- In each iteration with pagination, the loading view is change to visible and creates a smoth animations.
 ```
-Ti.App.fireEvent('openLoading');
+Ti.App.fireEvent('openLoading_infiniteScroll');
 ```
 - The ScrollView component to be scrolling, its fill of views where you can put any component that you want to show, like images, text, icons ...
 ```
